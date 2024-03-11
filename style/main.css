@@ -1,0 +1,15 @@
+@font-face {
+	font-family: "CommitMono";
+	src: url("../assets/fonts/CommitMono-400-Regular.otf") format("opentype"),
+		url("../assets/fonts/CommitMono-400-Regular.woff") format("woff"),
+		url("../assets/fonts/CommitMono-400-Regular.woff2") format("woff2"),
+		url("../assets/fonts/CommitMono-700-Regular.otf") format("opentype"),
+		url("../assets/fonts/CommitMono-700-Regular.woff") format("woff"),
+		url("../assets/fonts/CommitMono-700-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: "CommitMono", monospace;
+}
