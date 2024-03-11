@@ -70,6 +70,20 @@ document.addEventListener("DOMContentLoaded", function () {
 			customCharacters
 		);
 
+		// erase previous QR code
+		document.getElementById("qrcode").innerHTML = "";
+		document.getElementById("qrcode-instruction").style.display = "block";
+
+		// Generate QR code of generated password and display it
+		new QRCode(document.getElementById("qrcode"), {
+			text: generatedPassword,
+			width: 128,
+			height: 128,
+			colorDark: "#000000",
+			colorLight: "#ffffff",
+			correctLevel: QRCode.CorrectLevel.H,
+		});
+
 		document.getElementById("password").value = generatedPassword;
 	});
 

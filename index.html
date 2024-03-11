@@ -12,166 +12,201 @@
 </head>
 
 <body>
-    <div class="container mx-auto">
-        <div class="flex justify-center items-center h-screen">
-            <div class="w-full">
+    <div class="flex flex-col justify-between min-h-screen pt-20">
+        <div class="container mx-auto flex-grow">
 
-                <!-- Heading Section -->
-                <div class="flex justify-center items-center">
-                    <h1 class="text-4xl font-bold text-gray-800">
-                        Strong Password Generator
-                    </h1>
-                </div>
+            <!-- Heading Section -->
+            <div class="flex justify-center items-center">
+                <h1 class="text-4xl font-bold text-gray-800">
+                    Password Generator
+                </h1>
+            </div>
 
-                <!-- Password Generator Section -->
-                <div class="flex justify-center items-center mt-10">
-                    <div class="w-full">
-                        <div class="flex justify-center items-center">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <input type="text" id="password"
-                                        class="w-1/2 p-3 border-2 border-gray-300 rounded-md"
-                                        placeholder="Generated Password" readonly>
-                                </div>
+            <!-- Password Generator Section -->
+            <div class="flex justify-center items-center mt-10">
+                <div class="w-full">
 
-                                <!-- Copy icon -->
-                                <div class="flex justify-center items-center mt-5">
-                                    <div class="w-full">
-                                        <div class="flex justify-center items-center">
-                                            <button id="copy" class="w-1/2 p-3 bg-blue-500 text-white rounded-md">
-                                                Copy Password
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="flex justify-center items-center m-5">
+                        <div class="flex w-3/4 justify-between">
+                            <input type="text" id="password" class="flex-grow p-3 border-2 border-gray-300 rounded-lg"
+                                placeholder="Generated Password" readonly>
+
+                            <!-- Copy button -->
+                            <button id="copy" class="w-20 ml-3 pl-5 pr-5 pt-3 pb-3 bg-blue-500 text-white rounded-lg">
+                                Copy
+                            </button>
                         </div>
+                    </div>
 
-                        <!-- Password configuration option section -->
-                        <div class="flex justify-center items-center mt-5">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <div class="w-1/2">
-                                        <div class="flex justify-between items-center">
-                                            <label for="length" class="text-gray-500">
-                                                Length
-                                            </label>
-                                            <input type="number" id="length"
-                                                class="p-3 border-2 border-gray-300 rounded-md" placeholder="Length"
-                                                value="15">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-center items-center mt-5">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <div class="w-1/2">
-                                        <div class="flex justify-between items-center">
-                                            <label for="uppercase" class="text-gray-500">
-                                                Uppercase
-                                            </label>
-                                            <input type="checkbox" id="uppercase" checked="checked"
-                                                class="p-3 border-2 border-gray-300 rounded-md">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-center items-center mt-5">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <div class="w-1/2">
-                                        <div class="flex justify-between items-center">
-                                            <label for="lowercase" class="text-gray-500">
-                                                Lowercase
-                                            </label>
-                                            <input type="checkbox" id="lowercase" checked="checked"
-                                                class="p-3 border-2 border-gray-300 rounded-md">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-center items-center mt-5">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <div class="w-1/2">
-                                        <div class="flex justify-between items-center">
-                                            <label for="number" class="text-gray-500">
-                                                Number
-                                            </label>
-                                            <input type="checkbox" id="number" checked="checked"
-                                                class="p-3 border-2 border-gray-300 rounded-md">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-center items-center mt-5">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <div class="w-1/2">
-                                        <div class="flex justify-between items-center">
-                                            <label for="special" class="text-gray-500">
-                                                Special Characters (e.g. @, #, $, %, etc.)
-                                            </label>
-                                            <input type="checkbox" id="special" checked="checked"
-                                                class="p-3 border-2 border-gray-300 rounded-md">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Custom Allowed characters -->
-                        <div class="flex justify-center items-center mt-5">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <div class="w-1/2">
-                                        <div class="flex justify-between items-center">
-                                            <label for="custom" class="text-gray-500">
-                                                Custom Allowed Characters
-                                            </label>
-                                            <input type="text" id="custom"
-                                                class="p-3 border-2 border-gray-300 rounded-md"
-                                                placeholder="Your Characters">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Generate Password Button -->
-                        <div class="flex justify-center items-center mt-10">
-                            <div class="w-full">
-                                <div class="flex justify-center items-center">
-                                    <button id="generate" class="w-1/2 p-3 bg-blue-500 text-white rounded-md">
-                                        Generate Password
-                                    </button>
-                                </div>
+                    <!-- Password configuration option section -->
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="w-3/4 p-4 hover:bg-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <label for="length" class="text-gray-500">
+                                    Length
+                                </label>
+                                <input type="number" id="length"
+                                    class="ml-5 w-3/4 p-3 border-2 border-gray-300 rounded-lg" placeholder="Length"
+                                    value="15">
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Copyright to Kisan Thapa Section -->
-                <div class="flex flex-col justify-center items-center mt-20">
-                    <div class="text-center text-gray-500">
-                        &copy; 2024 Kisan Thapa
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="w-3/4 p-4 hover:bg-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <label for="uppercase" class="w-full text-gray-500" htmlFor="uppercase">
+                                    Uppercase
+                                </label>
+
+                                <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+                                    htmlFor="uppercase">
+                                    <input id="uppercase" type="checkbox" checked="checked"
+                                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-lg border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+                                    <span
+                                        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                            fill="currentColor" stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="w-3/4 p-4 hover:bg-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <label for="lowercase" class="w-full text-gray-500" htmlFor="lowercase">
+                                    Lowercase
+                                </label>
+
+                                <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+                                    htmlFor="uppercase">
+                                    <input id="lowercase" type="checkbox" checked="checked"
+                                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-lg border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+                                    <span
+                                        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                            fill="currentColor" stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="w-3/4 p-4 hover:bg-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <label for="number" class="w-full text-gray-500" htmlFor="number">
+                                    Number
+                                </label>
+
+                                <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+                                    htmlFor="number">
+                                    <input id="number" type="checkbox" checked="checked"
+                                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-lg border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+                                    <span
+                                        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                            fill="currentColor" stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="w-3/4 p-4 hover:bg-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <label for="special" class="w-full text-gray-500" htmlFor="special">
+                                    Special Characters (e.g. @,#,$,%,etc.)
+                                </label>
+
+                                <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+                                    htmlFor="special">
+                                    <input id="special" type="checkbox" checked="checked"
+                                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-lg border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+                                    <span
+                                        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                            fill="currentColor" stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom characters -->
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="w-3/4 p-4 hover:bg-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <label for="custom" class="text-gray-500">
+                                    Include Custom Characters
+                                </label>
+                                <input type="text" id="custom"
+                                    class="ml-5 w-3/4 p-3 border-2 border-gray-300 rounded-lg"
+                                    placeholder="Your Characters">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generate Password Button -->
+                    <div class="flex justify-center items-center m-5">
+                        <button id="generate" class="w-3/4 p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700">
+                            Generate Password
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <!-- QR Code of generated password section -->
+            <div class="flex flex-col justify-center items-center mt-10">
+                <div id="qrcode" class="w-100 h-100 "></div>
+                <div class="text-center text-gray-500 mt-5" id="qrcode-instruction" style="display: none;">
+                    Scan QR Code to save password
+                </div>
+            </div>
+
+
+            <div class="flex justify-center items-center m-5">
+                <a href="strong_pass.html">
+                    <button id="generate" class="p-3 pl-10 pr-10 rounded-lg hover:bg-gray-200">
+                        What is Strong Password?
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Copyright to Kisan Thapa Section -->
+    <div class="flex flex-col justify-center items-center mb-10"
+        style="position: fixed; bottom: 0; width: 100%; background: white;">
+        <div class="text-center text-gray-500">
+            &copy; 2024 Kisan Thapa
         </div>
     </div>
 
     <!-- JavaScript File  -->
     <script src="script/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
 </body>
 
 </html>
